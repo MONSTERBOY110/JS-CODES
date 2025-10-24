@@ -1,39 +1,148 @@
-*{
-    padding:0;
-    margin:0;
+:root{
+  --bg-1: #071029;
+  --bg-2: #0b2540;
+  --card: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --accent: #38A3FF;
+  --muted: #9fbfdc;
+  --text: #E6F2FF;
+  --success: #66e07f;
+  --danger: #ff6b6b;
+  --shadow: 0 10px 30px rgba(2,6,23,0.6);
 }
+
+*{box-sizing:border-box}
+html,body{height:100%}
 body{
-    background-color: #202020;
-    margin: 60px auto;
-    text-align:center;
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg,var(--bg-1) 0%, var(--bg-2) 100%);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-h1{
-    font-family: cursive;
-    padding-top:100px;
-    color:#f6f8fa;
-    font-weight:100;
+
+.container{
+  width:100%;
+  max-width:720px;
+  padding:1rem;
 }
-h3{
-    font-weight:lighter;
-    font-family: cursive;
-    padding-top:10px;
-    color:#f6f8fa;
-    font-weight:100;
-    word-spacing:1;
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius:14px;
+  padding:2rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+/* Header */
+.card-header{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+.card-header h1{
+  margin:0;
+  font-size:1.1rem;
+  letter-spacing:1px;
+  font-weight:700;
+  color:var(--text);
+}
+.card-header .decor{
+  font-size:1.6rem;
+  opacity:0.9;
+}
+
+/* Description */
+.desc{
+  margin:0;
+  color:var(--muted);
+  font-size:0.95rem;
+  line-height:1.4;
+  max-width:60ch;
+}
+
+/* Input */
+.input-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+.input-icon{
+  position:absolute;
+  left:12px;
+  color:var(--muted);
+  font-size:1.05rem;
+  pointer-events:none;
 }
 .inputbox{
-    border:1px solid #f6f8fa;
-    padding:10px;
-    text-indent:5px;
-    width:450px;
-    background-color:#202020;
-    margin:10px;
-    text-transform:uppercase;
-    color:#f6f8fa;
-    font-weight:lighter;
+  width:100%;
+  padding:14px 16px 14px 40px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.04);
+  color:var(--text);
+  border-radius:10px;
+  font-size:1rem;
+  transition:box-shadow .18s ease, transform .12s ease, border-color .12s ease;
+  outline:none;
 }
+.inputbox::placeholder{ color:rgba(223,238,255,0.45) }
+
+.inputbox:focus{
+  box-shadow: 0 6px 20px rgba(56,163,255,0.12);
+  border-color:var(--accent);
+  transform:translateY(-1px);
+}
+
+/* Result box */
 .list{
-    color:#f6f8fa;
-    font-size:20px;
-    padding-top:50px;
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  padding:12px 14px;
+  border-radius:8px;
+  background:linear-gradient(90deg, rgba(56,163,255,0.04), rgba(9,22,38,0.02));
+  border:1px solid rgba(56,163,255,0.06);
+  color:var(--muted);
+  font-weight:600;
+  font-size:0.98rem;
+}
+
+/* Footer */
+.footer{
+  margin-top:6px;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:0.85rem;
+}
+
+/* Success / failure helpers (script.js can toggle .success/.error on .list) */
+.list.success{
+  border-color: rgba(102,224,127,0.15);
+  background: linear-gradient(90deg, rgba(102,224,127,0.03), rgba(9,22,38,0.02));
+  color:var(--success);
+}
+.list.error{
+  border-color: rgba(255,107,107,0.12);
+  background: linear-gradient(90deg, rgba(255,107,107,0.03), rgba(9,22,38,0.02));
+  color:var(--danger);
+}
+
+/* Responsive */
+@media (max-width:520px){
+  .card{ padding:1.25rem }
+  .card-header h1{ font-size:0.95rem }
+  .inputbox{ padding:12px 12px 12px 36px }
 }

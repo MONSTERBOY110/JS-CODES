@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8"/>
     <title>Palindrome Checker</title>
+
+    <!-- Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
+
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
-    <div class="Form">
+    <div class="card">
+        <div class="card-header">
+            <h1>PALINDROME CHECKER</h1>
+            <span class="decor">🔁</span>
+        </div>
 
-        <h1>PALINDROME CHECKER</h1>
-        <br>
-        <p style="color:white;font-family: cursive;"> A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring
-            punctuation, case, and spacing.</p>
-        <br>
-        <input type="text" class="inputbox" oninput="palindrome()" placeholder="Enter a word and a string to check....">
-        <p class="list"></p>
+        <p class="desc">Check whether a word or sentence reads the same forwards and backwards. Punctuation, spacing, and case are ignored.</p>
+
+        <div class="input-wrap">
+            <i class="fa fa-keyboard-o input-icon" aria-hidden="true"></i>
+            <input type="text" class="inputbox" oninput="palindrome()" placeholder="Type text to check..." />
+        </div>
+
+        <p class="list" aria-live="polite"></p>
+
+        <footer class="footer">
+            <small>Tip: Try "A man, a plan, a canal: Panama"</small>
+        </footer>
     </div>
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>
