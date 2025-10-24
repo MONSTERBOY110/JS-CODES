@@ -1,7 +1,16 @@
+/* Blue theme version */
+:root{
+  --bg: #071229;
+  --accent: #38A3FF;
+  --accent-dark: #2b86d6;
+  --text: #E6F2FF;
+  --muted: #8fb7d9;
+}
+
 html,body{
   font-family: "Press Start 2P", cursive;
-  color: #D49D42;
-  background-color: #151515;
+  color: var(--text);
+  background-color: var(--bg);
 }
 input:focus{
   outline: none;
@@ -10,8 +19,8 @@ input[type=number]{
   -moz-appearance: textfield;
 }
 @keyframes change{
-from{color: #3f3d3d;}
-to{color:#D49D42 ;}
+  from{color: #0b2540;}
+  to{color: var(--accent);}
 }
 .heading{
   animation-name: change;
@@ -21,7 +30,7 @@ to{color:#D49D42 ;}
 header{
   position: relative;
   height: 40vh;
-  border-bottom: 5px solid #D49D42;
+  border-bottom: 5px solid var(--accent);
 }
 main{
   height: 55vh;
@@ -50,19 +59,33 @@ h1{
   left: 50%;
   transform: translate(-50%,-50%);
 }
+.header-controls{
+  position: absolute;
+  top: 1.2rem;
+  left: 1.6rem;
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+}
 .info{
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: 1.2rem;
+  right: 1.6rem;
+  color: var(--muted);
+  font-size: .8rem;
 }
 .btn{
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
+  cursor: pointer;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  font-family: inherit;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
 }
 .mid{
-  background: #D49D42;
-  color: #151515;
+  background: var(--accent);
+  color: var(--bg);
   font-size: 3rem;
   width: 10rem;
   padding: 2rem 0rem;
@@ -71,40 +94,56 @@ h1{
   bottom: -16.5%;
   left: 50%;
   transform: translate(-50%, 50%);
-}
-.btn{
-cursor: pointer;
-background: #D49D42;
-color: #151515;
-border: none;
-font-family: inherit;
-padding: 2rem 3rem;
-border-radius: 1px;
+  border: 3px solid var(--accent-dark);
+  border-radius: 6px;
 }
 .number{
-color: #D49D42;
-background: #151515;
-font-family: inherit;
-font-size: 2rem;
-width: 20%;
-padding: 2% 2%;
-border: 3px solid #D49D42;
-text-align: center;
+  color: var(--accent);
+  background: #051226;
+  font-family: inherit;
+  font-size: 2rem;
+  width: 20%;
+  padding: 2% 2%;
+  border: 3px solid var(--accent);
+  text-align: center;
+  border-radius: 4px;
 }
 .btnCheck{
-cursor: pointer;
-background: #D49D42;
-color: #151515;
-border: none;
-padding: 2% 3%;
-font-family: inherit;
-font-size: 1.5rem;
-margin-top: 1rem;
+  cursor: pointer;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 1% 2%;
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  border-radius: 4px;
 }
-.btnCheck:hover{
-  background: #926b2b;
+.btnCheck:hover, .btn:hover {
+  background: var(--accent-dark);
 }
 .message{
   margin-bottom: 3rem;
   height: 1.5rem;
+  color: var(--muted);
+}
+.difficulty{
+  background: #051226;
+  color: var(--text);
+  border: 2px solid var(--accent);
+  padding: .4rem .6rem;
+  font-family: inherit;
+  border-radius: 4px;
+}
+.difficulty-label{
+  font-size: .7rem;
+  color: var(--muted);
+}
+@media (max-width:600px){
+  .header-controls{
+    left: .6rem;
+    gap: .4rem;
+  }
+  .number{ width: 40%; }
+  .mid{ width: 8rem; font-size: 2rem; padding: 1rem 0; }
 }

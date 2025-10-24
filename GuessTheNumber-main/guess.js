@@ -1,48 +1,83 @@
 'use strict';
-// console.log(document.querySelector('.message').textContent);
-// document.querySelector('.message').textContent = '🎉 Correct Number'
-let secnumber = Math.trunc(Math.random()*20)+1;
-// document.querySelector('.mid').textContent = secnumber;
-let score = 20;
+const numberInput = document.querySelector('.number');
+const checkBtn = document.querySelector('.btnCheck');
+const messageEl = document.querySelector('.message');
+const midEl = document.querySelector('.mid');
+const againBtn = document.querySelector('.btn');
+const scoreEl = document.getElementById('score');
+const highscoreEl = document.getElementById('highscore');
+const difficultySelect = document.getElementById('difficulty');
+const rangeInfo = document.getElementById('rangeInfo');
+
+let maxNumber = Number(difficultySelect.value) || 20;
+let secretNumber;
+let score;
 let highscore = 0;
 
-document.querySelector('.btnCheck').addEventListener('click', function(){
-    const guess = Number(document.querySelector('.number').value);
-    console.log(guess);
-    console.log(secnumber);
-    if (!guess) {
-    document.querySelector('.message').textContent = '🚫 No Number'
-    }
-    else if( score === 1){
-        document.querySelector('.message').textContent = '😭 You lost the game!'
-        document.querySelector('#score').textContent = score - 1;
-    }
-    else if (guess === secnumber) {
-    document.querySelector('.message').textContent = '🎉 Correct Number'
-    document.querySelector('.mid').textContent = secnumber;
-    document.querySelector('body').style.backgroundColor =  '#52006A';
-    console.log(highscore);
-    if (score> highscore) {
-        highscore=score;
-        document.querySelector('#highscore').textContent = highscore;
-    }
-    }
-    else if (guess > secnumber) {
-    document.querySelector('.message').textContent = '📈 Too High!'
+function setMessage(msg){ messageEl.textContent = msg; }
+function generateSecret(max){
+  return Math.trunc(Math.random() * max) + 1;
+}
+function updateRangeInfo(){
+  rangeInfo.textContent = `(Between 1 and ${maxNumber})`;
+}
+function initGame(max = 20){
+  maxNumber = max;
+  secretNumber = generateSecret(maxNumber);
+  score = 20;
+  scoreEl.textContent = score;
+  midEl.textContent = '?';
+  midEl.style.width = '';
+  document.body.style.backgroundColor = '';
+  numberInput.value = '';
+  setMessage('Start Guessing....');
+  updateRangeInfo();
+}
+function win(){
+  setMessage('🎉 Correct Number!');
+  midEl.textContent = secretNumber;
+  document.body.style.backgroundColor = '#063b64'; // subtle win tint for blue theme
+  if (score > highscore){
+    highscore = score;
+    highscoreEl.textContent = highscore;
+  }
+}
+
+checkBtn.addEventListener('click', () => {
+  const guess = Number(numberInput.value);
+  if (!guess || guess < 1 || guess > maxNumber){
+    setMessage(`Enter a number 1–${maxNumber}`);
+    return;
+  }
+  if (guess === secretNumber){
+    win();
+    return;
+  }
+  if (score > 1){
+    setMessage(guess > secretNumber ? '📈 Too high!' : '📉 Too low!');
     score--;
-    document.querySelector('#score').textContent  = score;
-    }
-    else if (guess < secnumber) {
-    document.querySelector('.message').textContent = '📉 Too Low!'
-    score--; 
-    document.querySelector('#score').textContent = score;
-    }
+    scoreEl.textContent = score;
+  } else {
+    setMessage('💥 You lost the game!');
+    score = 0;
+    scoreEl.textContent = score;
+    midEl.textContent = secretNumber;
+  }
 });
-document.querySelector('.btn').addEventListener('click', function(){
-    secnumber = Math.trunc(Math.random()*20)+1;
-    score = 20; 
-    document.querySelector('.message').textContent = 'Start Guessing....'
-    document.querySelector('#score').textContent = score;
-    document.querySelector('.mid').textContent = '?' ;
-    document.querySelector('body').style.backgroundColor =  '#151515' ;
+
+// Reset game
+againBtn.addEventListener('click', () => initGame(maxNumber));
+
+// Difficulty change
+difficultySelect.addEventListener('change', (e) => {
+  const newMax = Number(e.target.value) || 20;
+  initGame(newMax);
 });
+
+// support pressing Enter in input
+numberInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') checkBtn.click();
+});
+
+// initialize
+initGame(maxNumber);

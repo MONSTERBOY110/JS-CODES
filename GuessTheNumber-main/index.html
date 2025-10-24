@@ -17,25 +17,35 @@
   <body>
     <header class="head">
       <h1 class="heading">Guess My Number</h1>
-      <button type="reset" class="btn">Again!</button>
-      <p class="info">(Between 1 and 20)</p>
+
+      <div class="header-controls">
+        <button type="reset" class="btn">Again!</button>
+
+        <label for="difficulty" class="difficulty-label">Difficulty</label>
+        <select id="difficulty" class="difficulty">
+          <option value="10">Easy (1-10)</option>
+          <option value="20" selected>Normal (1-20)</option>
+          <option value="50">Hard (1-50)</option>
+        </select>
+      </div>
+
       <p class="mid">?</p>
     </header>
     <main>
-    <section class="left">
-      <input type="number" class="number" />
-      <button class="btnCheck">Check!</button>
-    </section>
-    <section class="right">
-      <p class="message">Start Guessing....</p>
-      <p class="score">💯 Your score : <span id="score">20</span></p>
-      <p class="highscore">🥇 Highscore : <span id="highscore">0</span></p>
-    </section >
-  </main>
-  <audio  play>
-    <source src="bgm.mp3" type="audio/mpeg">
-    <source src="bgm.ogg" type="audio/ogg">
-  </audio>
-  <script src="guess.js"></script>
+      <section class="left">
+        <input type="number" class="number" />
+        <button class="btnCheck">Check!</button>
+      </section>
+      <section class="right">
+        <p class="message">Start Guessing....</p>
+        <p class="score">💯 Your score : <span id="score">20</span></p>
+        <p class="highscore">🥇 Highscore : <span id="highscore">0</span></p>
+      </section >
+    </main>
+    <audio  play>
+      <source src="bgm.mp3" type="audio/mpeg">
+      <source src="bgm.ogg" type="audio/ogg">
+    </audio>
+    <script src="guess.js"></script>
   </body>
 </html>
