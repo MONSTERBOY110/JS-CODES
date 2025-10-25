@@ -17,6 +17,7 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 18px;
 }
 
 .btn {
@@ -26,41 +27,131 @@ h1 {
 }
 
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: #070707;
 }
 
+/* Buttons */
 .btn button {
-    font-size: xxx-large;
+    font-size: 2.6rem;
     padding: 15px;
     border-radius: 80px;
     margin: 15px;
     text-align: center;
-    border: 3px solid yellow;
+    border: 3px solid #FFD400;
     background-color: transparent;
     cursor: pointer;
-    transition: all 0.7s;
+    transition: all 0.18s ease;
+    width: 88px;
+    height: 88px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(255,212,0,0.06);
 }
 
 .btn button:hover {
-    background-color: rgba(255, 255, 255, 0.119);
-    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(-6px) scale(1.06);
 }
 
+/* Small controls */
 .reset,
 .auto {
-    font-size: medium;
-    padding: 15px;
-    border-radius: 80px;
-    margin: 15px;
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    border-radius: 32px;
+    margin: 10px;
     text-align: center;
-    border: 3px solid yellow;
+    border: 2px solid #FFD400;
     cursor: pointer;
     background-color: transparent;
-    transition: all 0.7s;
+    transition: all 0.18s ease;
 }
 
+/* Scoreboard styles */
+.scoreboard-wrap{
+    width: 320px;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board-title{
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    color: #FFD400;
+    background: linear-gradient(90deg, rgba(255,212,0,0.08), transparent);
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,212,0,0.12);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+
+/* Table appearance like a board */
+.scoreboard{
+    width: 100%;
+    border-collapse: collapse;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,212,0,0.06);
+}
+
+.scoreboard thead{
+    background: rgba(255,212,0,0.06);
+}
+
+.scoreboard th, .scoreboard td{
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    color: #EDEDED;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.scoreboard tbody tr:last-child td{
+    border-bottom: none;
+}
+
+/* Emphasize labels & values */
+.r-label{
+    opacity: 0.95;
+}
+
+.win-label{ color: #66e07f; }
+.loss-label{ color: #ff6b6b; }
+.tie-label{ color: #9fb0ff; }
+
+.r-value{
+    text-align: right;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #FFD400;
+}
+
+/* small accessibility helper (visually hidden) */
+.visually-hidden{
+    position: absolute!important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* kept previous hover styles */
 .reset:hover,
 .auto:hover {
-    background-color: rgba(255, 255, 255, 0.119);
-    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateY(-6px);
+}
+
+/* Responsive tweaks */
+@media (max-width:480px){
+    .btn button{ width:72px; height:72px; font-size:2rem; margin:10px; }
+    .scoreboard { width: 92%; }
+    .board-title { font-size: 0.85rem; padding: 6px 10px; }
 }

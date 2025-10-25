@@ -9,14 +9,46 @@
 <body>
     <div class="container">
         <h1>Stone-Paper-Scissors</h1>
+
         <div class="btn">
-            <button class="rock">✊🏼</button>
-            <button class="paper">🖐🏼</button>
-            <button class="scissors">✌🏼</button>
+            <button class="rock" title="Rock">✊🏼</button>
+            <button class="paper" title="Paper">🖐🏼</button>
+            <button class="scissors" title="Scissors">✌🏼</button>
         </div>
+
         <h2 class="result"></h2>
         <p class="move"></p>
-        <p class="score"></p>
+
+        <!-- New Scoreboard -->
+        <section class="scoreboard-wrap" aria-label="Scoreboard">
+            <h2 class="board-title">SCOREBOARD</h2>
+            <table class="scoreboard" role="table" aria-describedby="score-desc">
+                <thead>
+                    <tr>
+                        <th>Result</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="r-label win-label">Win</td>
+                        <td class="r-value win-value"><span id="wins">0</span></td>
+                    </tr>
+                    <tr>
+                        <td class="r-label loss-label">Loss</td>
+                        <td class="r-value loss-value"><span id="losses">0</span></td>
+                    </tr>
+                    <tr>
+                        <td class="r-label tie-label">Tie</td>
+                        <td class="r-value tie-value"><span id="ties">0</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="score-desc" class="visually-hidden">Shows total wins, losses and ties.</p>
+        </section>
+
+        <!-- kept for compatibility with existing script -->
+
         <div class="btns">
             <button class="reset">Reset Score-Board</button>
             <button class="auto">Auto Play</button>
