@@ -10,13 +10,13 @@
 :root {
     /* gloabal csss */
 
-    --dk-red: hsl(0, 76%, 44%);
+    --dk-red: hsl(226, 100%, 50%);
 
     --dk-violet: hsl(268, 75%, 9%);
-    --lt-violet: hsl(268, 47%, 21%);
-    --lt-violet2: hsl(281, 89%, 26%);
-    --vb-violet: hsl(285, 91%, 52%);
-    --vb-violet2: hsl(290, 70%, 36%);
+    --lt-violet: hsl(234, 74%, 24%);
+    --lt-violet2: hsl(215, 95%, 43%);
+    --vb-violet: hsl(225, 91%, 52%);
+    --vb-violet2: hsl(245, 100%, 50%);
 
     --vb-yellow: hsl(52, 100%, 62%);
 
@@ -41,7 +41,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(231deg, rgba(22, 6, 40, 1) 0%, rgba(52, 28, 79, 1) 50%, rgba(88, 7, 125, 1) 100%);
+    background: linear-gradient(231deg, rgb(0, 10, 114) 0%, rgb(20, 77, 146) 50%, rgb(39, 23, 157) 100%);
     overflow-y: hidden;
 }
 
