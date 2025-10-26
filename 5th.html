@@ -1,42 +1,22 @@
 <html>
-    <style>
-      *
-      {
-         box-sizing:border-box;
-      }
-      input[type=text],select,textarea
-      {
-         width:50%;
-         padding:20px 15px;
-         border :1px solid black;
-         border-radius:5px;
-         resize:vertical;
-      }
-      input[type=text]:focus
-      {
-         background-color:#F2F2F2;
-      }
-      #div1
-       {
-         border-radius:2px;
-         background-color:#00ffcc;
-         padding:20px;
-         width:400px;
-       }
-    </style>
-    <body>
-        <div id="div1">
-          On Key Down <br>
-          <input type="text" id="t1" onkeydown="div1.style.background=this.value";><br>
-          On Key UP <br>
-          <input type="text" id="t2" onkeyup="div1.style.background=this.value";><br>
-          On Key Press <br>
-          <input type="text" id="t3" onkeypress="div1.style.background=this.value";><br>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="5thstyle.css">
+</head>
+<body>
+    <div id="wrapper" onmouseout="fun1()">
+        <div id="block1">
+          <h1>Nature Image</h1>
+          <img src="nature.jpeg" id="img1" alt="Image">
         </div>
-    </body>
+        <div id="block2">
+          <h1>Sea Image</h1>
+          <img src="sea.jpeg" id="img2" alt="Image">
+        </div>
+       </div>
+      <script src="5th.js"></script>
+</body>
 </html>
-
-
 
 
 
