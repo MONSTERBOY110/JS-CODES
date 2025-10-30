@@ -4,44 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #071229;
+            --card: #0d1836;
+            --cell: #0a1526;
+            --accent: #38A3FF;
+            --text: #E6F2FF;
+            --shadow: 0 20px 40px rgba(2,6,23,0.7);
+        }
+
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--bg) 0%, #0a1631 100%);
+            font-family: 'Poppins', sans-serif;
             margin: 0;
+            color: var(--text);
         }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, var(--accent), #66B6FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
         .board {
             display: grid;
-            grid-template-columns: repeat(3, 100px);
-            grid-template-rows: repeat(3, 100px);
-            gap: 5px;
-            background-color: #333;
-            padding: 10px;
-            border-radius: 10px;
+            grid-template-columns: repeat(3, 120px);
+            grid-template-rows: repeat(3, 120px);
+            gap: 8px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.05);
         }
+
         .cell {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2em;
+            font-size: 2.8em;
+            font-weight: 600;
             cursor: pointer;
-            border: 1px solid #000;
-            background-color: #fff;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            background: var(--cell);
+            color: var(--accent);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            transition: all 0.2s ease;
         }
+
         .cell:hover {
-            background-color: #ddd;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(56,163,255,0.15);
+            background: linear-gradient(180deg, rgba(56,163,255,0.1), rgba(56,163,255,0.05));
+        }
+
+        .cell[data-value="X"] {
+            color: #38A3FF;
+        }
+
+        .cell[data-value="O"] {
+            color: #FF6B6B;
+        }
+
+        .status {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        .reset-btn {
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(56,163,255,0.25);
+        }
+
+        @media (max-width: 480px) {
+            .board {
+                grid-template-columns: repeat(3, 90px);
+                grid-template-rows: repeat(3, 90px);
+                gap: 6px;
+                padding: 1rem;
+            }
+            .cell {
+                width: 90px;
+                height: 90px;
+                font-size: 2.2em;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
+    <h1>Tic Tac Toe</h1>
     <div class="board" id="board">
         <div class="cell" data-index="0"></div>
         <div class="cell" data-index="1"></div>
@@ -53,6 +134,8 @@
         <div class="cell" data-index="7"></div>
         <div class="cell" data-index="8"></div>
     </div>
+    <div class="status" id="status">Player X's turn</div>
+    <button class="reset-btn" onclick="resetBoard()">New Game</button>
 
     <script>
         const board = document.getElementById('board');
@@ -75,14 +158,16 @@
 
             if (cell.textContent === '') {
                 cell.textContent = currentPlayer;
+                cell.setAttribute('data-value', currentPlayer);
                 if (checkWin(currentPlayer)) {
-                    alert(`${currentPlayer} wins!`);
-                    resetBoard();
+                    document.getElementById('status').textContent = `Player ${currentPlayer} wins!`;
+                    setTimeout(resetBoard, 1500);
                 } else if (isDraw()) {
-                    alert('Draw!');
-                    resetBoard();
+                    document.getElementById('status').textContent = "It's a draw!";
+                    setTimeout(resetBoard, 1500);
                 } else {
                     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    document.getElementById('status').textContent = `Player ${currentPlayer}'s turn`;
                 }
             }
         }
@@ -104,8 +189,10 @@
         function resetBoard() {
             cells.forEach(cell => {
                 cell.textContent = '';
+                cell.removeAttribute('data-value');
             });
             currentPlayer = 'X';
+            document.getElementById('status').textContent = `Player ${currentPlayer}'s turn`;
         }
 
         board.addEventListener('click', handleClick);
