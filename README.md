@@ -8,9 +8,37 @@ This repository is a curated collection of my **JavaScript projects, scripts, an
 
 ---
 
-## Live Links
+<h2 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Anton&weight=700&size=30&duration=1&pause=1000000&center=true&vCenter=true&width=600&lines=🌐+Live+Project+Links" alt="Live Project Links" />
+</h2>
 
-_ 
+<table align="center" style="border-collapse: collapse; width: 80%;">
+  <thead>
+    <tr>
+      <th align="left">🧩 Project Name</th>
+      <th align="center">🚀 Live Demo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Caesar’s Cipher</td><td align="center"><a href="https://caesar-cipher-2k25.vercel.app/">🔗 View Live</a></td></tr>
+    <tr><td>Calculator</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Calculator Master</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Dictionary App</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Guess The Number</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Mobile Number Validator</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Palindrome Checker</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Password Generator</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Playable Piano</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Rock Paper Scissors</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Random Quotes App</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Roman Numeral Converter</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Scroll Event Learning</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Tic-Tac-Toe</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>To-Do List</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Weather App</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>World Quiz</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+  </tbody>
+</table>
 
 ---
 
