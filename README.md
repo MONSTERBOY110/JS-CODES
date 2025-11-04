@@ -21,8 +21,7 @@ This repository is a curated collection of my **JavaScript projects, scripts, an
   </thead>
   <tbody>
     <tr><td>Caesar’s Cipher</td><td align="center"><a href="https://caesar-cipher-2k25.vercel.app/">🔗 View Live</a></td></tr>
-    <tr><td>Calculator</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
-    <tr><td>Calculator Master</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Calculator Master</td><td align="center"><a href="calculator-2k25.vercel.app">🔗 View Live</a></td></tr>
     <tr><td>Dictionary App</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
     <tr><td>Guess The Number</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
     <tr><td>Mobile Number Validator</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
