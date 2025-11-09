@@ -9,7 +9,7 @@ This repository is a curated collection of my **JavaScript projects, scripts, an
 ---
 
 <h2 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Anton&weight=700&size=30&duration=1&pause=1000000&center=true&vCenter=true&width=600&lines=🌐+Live+Project+Links" alt="Live Project Links" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Anton&weight=700&size=30&duration=1&pause=1000000&center=true&vCenter=true&width=600&lines=🌐+Some+Live+Project+Links" alt="Live Project Links" />
 </h2>
 
 <table align="center" style="border-collapse: collapse; width: 80%;">
