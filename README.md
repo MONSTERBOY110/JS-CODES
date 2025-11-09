@@ -28,7 +28,7 @@ This repository is a curated collection of my **JavaScript projects, scripts, an
     <tr><td>Palindrome Checker</td><td align="center"><a href="https://palindrome-checker-2k25.vercel.app">🔗 View Live</a></td></tr>
     <tr><td>Password Generator</td><td align="center"><a href="https://pass-generator-2k25.vercel.app">🔗 View Live</a></td></tr>
     <tr><td>Playable Piano</td><td align="center"><a href="https://piano-2k25.vercel.app">🔗 View Live</a></td></tr>
-    <tr><td>Rock Paper Scissors</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Rock Paper Scissors</td><td align="center"><a href="https://rock-paper-scissors-2k25.vercel.app">🔗 View Live</a></td></tr>
     <tr><td>Random Quotes App</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
     <tr><td>Roman Numeral Converter</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
     <tr><td>Scroll Event Learning</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
