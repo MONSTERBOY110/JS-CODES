@@ -29,7 +29,7 @@ This repository is a curated collection of my **JavaScript projects, scripts, an
     <tr><td>Rock Paper Scissors</td><td align="center"><a href="https://rock-paper-scissors-2k25.vercel.app">🔗 View Live</a></td></tr>
     <tr><td>Tic-Tac-Toe</td><td align="center"><a href="https://tic-tac-toe-2k25.vercel.app/">🔗 View Live</a></td></tr>
     <tr><td>To-Do List</td><td align="center"><a href="https://to-do-list-2k25.vercel.app">🔗 View Live</a></td></tr>
-    <tr><td>Weather App</td><td align="center"><a href="https://your-live-link">🔗 Coming Soon</a></td></tr>
+    <tr><td>Weather App</td><td align="center"><a href="https://weather-2k25.vercel.app">🔗 View Livev</a></td></tr>
   </tbody>
 </table>
 
